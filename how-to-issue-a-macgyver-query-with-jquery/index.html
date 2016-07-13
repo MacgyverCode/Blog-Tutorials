@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    <script src="https://askmacgyver.com/macgyver.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Face Detector</h1>
+
+    <span id="results"></span>
+    <br>
+    <br>
+    <input id="image_url"></input>
+    <br>
+    <br>
+    <button id="detect">Detect</button>
+
+</body>
+
+<script>
+    $(function() {
+
+        function detect() {
+
+            macgyver.query({
+                payload: {
+                    key: "", // Supply Your Public Key
+                    id: "8X8a3W5S",
+                    data: {
+                        "image_url": $("#image_url").val()
+                    }
+                },
+                success: function(response) {
+                    console.log(response);
+                    $("#results").text(JSON.stringify(response));
+                }
+            });
+
+        }
+
+
+
+        $("#detect").click(function() {
+            detect();
+        });
+
+    });
+</script>
+
+
+
+
+
+
+
+</html>
