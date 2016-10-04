@@ -31,7 +31,7 @@ server {
         proxy_set_header content-type "application/x-www-form-urlencoded; charset=UTF-8";
 
         #macgyver variables
-        set $macgyver_key "private-live-5C2t6a4f8V8y8F";
+        set $macgyver_key "private-live-xxxxxxxxxxxx";
         set $program "10X2z6e5E";
         set $threshold "4000";
 
